@@ -1,4 +1,4 @@
-module ALU_tb;
+module ALUtb;
     reg [3:0] A, B;
     reg [2:0] ALU_Sel;
     wire [3:0] Result;
@@ -11,6 +11,12 @@ module ALU_tb;
         .Result(Result),
         .CarryOut(CarryOut)
     );
+
+    initial begin
+    $dumpfile("waveform.vcd");  
+    $dumpvars(0, ALUtb);
+    end
+
 
     initial begin
         //Test addition
